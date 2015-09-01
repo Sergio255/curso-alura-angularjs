@@ -4,11 +4,11 @@
       $scope.fotos = [];
 
       $http.get('v1/fotos')
-        .success(function (fotos) {
-          $scope.fotos = fotos;
+        .success(function (data) {
+          $scope.fotos = data;
         })
-        .error(function (erro) {
-          console.log(erro);
+        .error(function (err) {
+          console.log(err);
         });
     });
 })();
