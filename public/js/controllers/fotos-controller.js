@@ -1,6 +1,8 @@
 (function() {
   angular.module('alurapic')
     .controller('FotosController', function ($scope, $http) {
+      $scope.filtro = '';
+
       $scope.fotos = [];
 
       $http.get('v1/fotos')

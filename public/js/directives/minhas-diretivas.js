@@ -4,7 +4,7 @@
       return {
         'restric': 'AE',
         'scope': {
-          'title': '@'
+          'titulo': '@'
         },
         'templateUrl': 'js/directives/meu-painel.html',
         'transclude': true
