@@ -1,4 +1,5 @@
 (function() {
+  'use strict';
   angular.module('minhasDiretivas', [])
     .directive('meuPainel', function () {
       return {
