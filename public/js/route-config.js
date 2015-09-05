@@ -12,7 +12,7 @@
 
       $routeProvider.when('/fotos/new', {
         templateUrl: 'partials/fotos.html',
-        controller: 'FotosController'
+        controller: 'FotoController'
       });
 
       $routeProvider.otherwise({redirectTo: '/fotos'});

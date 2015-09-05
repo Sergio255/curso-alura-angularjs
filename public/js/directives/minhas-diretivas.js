@@ -10,5 +10,15 @@
         'templateUrl': 'js/directives/meu-painel.html',
         'transclude': true
       };
+    })
+    .directive('minhaFoto', function () {
+      return {
+        'restrict': 'E',
+        'scope': {
+          'titulo': '@',
+          'url': '@'
+        },
+        'templateUrl': 'js/directives/minha-foto.html',
+      }
     });
 })();
