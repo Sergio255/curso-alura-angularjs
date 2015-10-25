@@ -1,7 +1,11 @@
 (function() {
   'use strict';
-  angular.module('minhasDiretivas', [])
-    .directive('meuPainel', function () {
+  angular
+    .module('minhasDiretivas', [])
+    .directive('meuPainel', meuPainel)
+    .directive('minhaFoto', minhaFoto);
+
+  function meuPainel() {
       return {
         'restric': 'AE',
         'scope': {
@@ -10,8 +14,9 @@
         'templateUrl': 'js/directives/meu-painel.html',
         'transclude': true
       };
-    })
-    .directive('minhaFoto', function () {
+    }
+
+  function minhaFoto() {
       return {
         'restrict': 'E',
         'scope': {
@@ -19,6 +24,6 @@
           'url': '@'
         },
         'templateUrl': 'js/directives/minha-foto.html',
-      }
-    });
+      };
+    }
 })();
