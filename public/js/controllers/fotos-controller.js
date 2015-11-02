@@ -1,9 +1,10 @@
 (function() {
   'use strict';
-  angular.module('alurapic')
+  angular
+    .module('alurapic')
     .controller('FotosController', fotosController);
 
-  function fotosController($scope, $http, $timeout) {
+  function fotosController($scope, $http) {
       $scope.filtro = '';
 
       $scope.fotos = [];
