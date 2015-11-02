@@ -4,17 +4,16 @@
     .module('alurapic')
     .controller('FotoController', fotoController);
 
-  function fotoController($scope, $http, $routeParams) {
+  function fotoController($scope, $routeParams, recursoFoto) {
       $scope.foto = {};
 
       $scope.msg = '';
 
       if ($routeParams.fotoId) {
-        $http.get('v1/fotos/' + $routeParams.fotoId)
-          .success(function (foto) {
+        recursoFoto.get({ fotoId: $routeParams.fotoId }
+          , function (foto) {
             $scope.foto = foto;
-          })
-          .error(function (err) {
+          }, function (err) {
             console.log(err);
             $scope.msg = 'Não foi possível obter a foto.';
           });
@@ -23,11 +22,10 @@
       $scope.submeter = function () {
         if ($scope.formulario.$valid) {
           if($scope.foto._id) {
-            $http.put('v1/fotos/' + $scope.foto._id, $scope.foto)
-              .success(function () {
+            recursoFoto.update({ fotoId: $scope.foto._id }, $scope.foto
+              , function () {
                 $scope.msg = 'Foto ' + $scope.foto.titulo + 'alterada com sucesso.';
-              })
-              .error(function (err) {
+              }, function (err) {
                 console.log(err);
                 $scope.msg = 'Não foi possível atualza a foto ' + $scope.foto.titulo +'.';
               });

@@ -2,8 +2,9 @@
   'use strict';
   angular
     .module('alurapic', [
-      'minhasDiretivas',
-      'ngRoute',
-      'ngAnimate'
+      'minhasDiretivas'
+      , 'ngRoute'
+      , 'ngAnimate'
+      , 'meusServicos'
     ]);
 })();
