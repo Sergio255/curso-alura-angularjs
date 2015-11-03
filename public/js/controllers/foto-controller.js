@@ -2,7 +2,7 @@
   'use strict';
   angular
     .module('alurapic')
-    .controller('FotoController', fotoController);
+    .controller('FotoController', ['$scope', '$routeParams', 'recursoFoto', 'cadastroFotos', fotoController]);
 
   function fotoController($scope, $routeParams, recursoFoto, cadastroFotos) {
       $scope.foto = {};
