@@ -29,6 +29,6 @@
           console.log(err);
           $scope.msg = 'Não foi possível remover a foto ' + foto.titulo + '.';
         });
-    }
+    };
   }
 })();
